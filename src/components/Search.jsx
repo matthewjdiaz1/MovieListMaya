@@ -1,7 +1,6 @@
 import React from 'React';
 
 class Search extends React.Component {
-  // constructor
   constructor(props) {
     super(props);
     this.state = {
@@ -10,25 +9,19 @@ class Search extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  // methods
   handleChange(event) {
     this.setState({ value: event.target.value });
-    // console.log(this.state.value);
-    // console.log(this.props.movies);
-
   }
   handleSubmit(event) {
     // possible callback here
     this.props.handleSearch(this.state.value);
     event.preventDefault();
   }
-  // lifecycle
   render() {
     return (
       <form onSubmit={this.handleSubmit} >
-        {/* onChange={this.handleChange} down */}
         <input className="search" type='text' value={this.state.value} onChange={this.handleChange} />
-        <input className="search" type='submit' value='Submit' />
+        <input className="search" type='submit' value='Search' />
       </form>
     )
   }
