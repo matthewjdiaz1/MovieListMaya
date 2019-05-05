@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieList: [],
+      allMovies: [],
       displayList: [],
       query: '',
     }
@@ -24,18 +24,17 @@ class App extends React.Component {
   }
   filterList() {
     let newList = [];
-    this.state.displayList.forEach(movie => {
+    this.state.allMovies.forEach(movie => {
       if (movie.title.toLowerCase().includes(this.state.query.toLowerCase())) {
         newList.push(movie);
       }
-      // console.log(newList);
       if (newList.length > 0) {
         this.setState({
           displayList: newList
         });
       } else {
         this.setState({
-          displayList: [{ title: 'no movie found' }],
+          displayList: [{ title: 'No movie found!' }],
         })
       }
       // console.log('found movies:', this.props.displayList);
@@ -47,14 +46,19 @@ class App extends React.Component {
     }, this.addToList);
   }
   addToList() {
-    let newList = this.state.displayList;
-    // console.log('newList', newList);
-    // console.log('displ', this.state.displayList);
-    // console.log('query', this.state.query);
+    let newList = this.state.allMovies;
     newList.push({ title: this.state.query });
     this.setState({
-      displayList: newList,
+      allMovies: newList,
     });
+    let newDisplay = this.state.displayList;
+    newDisplay.push({ title: this.state.query });
+    this.setState({
+      displayList: newDisplay,
+    });
+    // console.log('newList:', newList);
+    // console.log('displayList:', this.state.displayList);
+    // console.log('allMovies:', this.state.allMovies);
   }
 
   render() {
