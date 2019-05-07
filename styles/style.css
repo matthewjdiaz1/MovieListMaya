@@ -4,18 +4,31 @@
   text-shadow: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em blue;;
   text-align: center;
   border-style: inset;
-  border-color: rgb(160, 65, 112);
+  border-color: hotpink;
 }
 .movie-title {
   color: darkblue;
-  background: paleturquoise;
+  background: turquoise;
   text-align: center;
   border-style: outset;
-  border-color: rgb(160, 65, 112);
+  border-color: hotpink;
   text-shadow: 1px 1px 1px red, 0 0 1em blue, 0 0 0.2em blue;;
 }
 .search {
   /* text-align: center */
   display: flex;
   justify-content: center;
+}
+form {
+  padding: 7px;
+  margin-right:5px;
+  overflow: hidden; 
+  padding-right: .5em;
+}
+.btnSpace {
+  padding: 7px;
+  margin-right:5px;
+}
+body {
+  background-color: #210544;
 }

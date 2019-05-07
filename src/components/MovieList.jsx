@@ -5,7 +5,9 @@ var MovieList = (props) => {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
-        <Movie className="movie-title" key={props.movies.indexOf(movie)} movie={movie.title} />
+        <div>
+          <Movie addMovieToWatchedMovies={props.addMovieToWatchedMovies} className="movie-title" key={props.movies.indexOf(movie)} movie={movie} />
+        </div>
       ))}
     </div>
   )

@@ -22,8 +22,10 @@ class AddMovie extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleAdd} >
-        <input className="add" type='text' value={this.state.value} onChange={this.handleChange} />
-        <input className="add" type='submit' value='Add Movie' />
+        <div>
+          <input className="add" type='text' value={this.state.value} onChange={this.handleChange} />
+          <input className="add" type='submit' value='Add Movie' />
+        </div>
       </form>
     )
   }
